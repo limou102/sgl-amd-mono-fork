@@ -90,7 +90,8 @@ def install() -> None:
 
     verify = importlib.import_module(VERIFY)
     route(verify.DsparkVerifyEpilogue, "__init__", _epilogue_init)
-    # SGLang since sgl-project/sglang#48298 draws the simulated length alike on every rank
+    # SGLang with this generator draws the length and DSpark's bonus seed alike on every
+    # rank; replacing its step would leave the bonus seed unset
     spec_utils = importlib.import_module(SPEC_UTILS)
     if not hasattr(spec_utils, "simulated_acc_len_generator"):
         route(

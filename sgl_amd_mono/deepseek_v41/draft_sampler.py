@@ -59,7 +59,7 @@ class _Entries:
 
     widths: tuple = ()
     draft_loop = draft_extend = begin_draft_round = graph_variants = None
-    # SGLang since sgl-project/sglang#45406 reads ``.built`` and ``.prepare`` of the entry
+    # current SGLang reads .built and .prepare of the entry, older SGLang the entry itself
     prepare = None
 
     def __init__(self, draft_sampler):
